@@ -1,54 +1,27 @@
-let menu = document.querySelector('#menu-bars');
-let navbar = document.querySelector('.navbar');
- 
+const fruits = ['pomme', 'mangue','fraise'];
+let note = [ 2,3,5]
+let fruitMaj = new Array();
+const fruitPluriel = new Array();
 
-menu.addEventListener('click', ()=>{
-    menu.classList.toggle('fa-times');//ajoute un icon croix quand on click
-    navbar.classList.toggle('active')
-});
+// fruits.forEach((fruit)=>{
+//   fruitMaj.push(fruit.toLocaleUpperCase());
+//   fruitPluriel.push(fruit + 's');
+// })
 
-document.querySelector('#search-icon').onclick = ()=>{
-    document.querySelector('#search-form').classList.toggle('active');
-}
+// traduit en fonction map()
+fruitMaj = fruits.map((fruit)=>{
+  return fruit.toLocaleUpperCase() // la fonction permet de retourner un nouveau tableau avec les modifications faites sur l'ancien mais il retourne le tableau toute entier
+})
+const notes = note.map((not)=>{
+  return not + 4
+})
+console.log(notes);
 
-document.querySelector('#close').onclick = ()=>{
-    document.querySelector('#search-form').classList.remove('active');
-}
+console.log(fruits);
+console.log(fruitMaj);
+// console.log(fruitPluriel);
 
-var swiper = new Swiper(".home-slider", {
-    spaceBetween: 30,
-    centeredSlides: true,
-    autoplay: {
-      delay: 7500,
-      disableOnInteraction: false,
-    },
-    pagination: {
-      el: ".swiper-pagination",
-      clickable: true,
-    },
-    loop: true,
-  });
+const tab = [5,6,8];
 
-  var swiper = new Swiper(".review-slider", {
-    spaceBetween: 20,
-    centeredSlides: true,
-    autoplay: {
-      delay: 7500,
-      disableOnInteraction: false,
-    },
-    loop: true,
-    breakpoints: {
-      0: {
-        slidesPerView: 1,
-      },
-      640: {
-        slidesPerView: 2,
-      },
-      768: {
-        slidesPerView: 2,
-      },
-      1024: {
-        slidesPerView: 3,
-      },
-    },
-  });
+const tabs = [...note, ...tab]
+console.log(tabs)
